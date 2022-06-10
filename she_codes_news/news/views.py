@@ -2,6 +2,7 @@ from django.views import generic
 from .models import NewsStory
 from django.urls import reverse_lazy
 from .forms import StoryForm
+from django.shortcuts import render
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
@@ -26,3 +27,20 @@ class AddStoryView(generic.CreateView):
     context_object_name = 'storyForm'
     template_name = 'news/CreateStory.html'
     success_url = reverse_lazy('news:index')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return().form_valid(form)
+
+    def image_upload_view(request):
+        """Process images uploaded by users"""
+        if request.method == 'POST':
+            form = StoryForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+            # Get the current instance object to display in the template
+                img_obj = form.instance
+                return render(request, 'index.html', {'form': form, 'img_obj': img_obj})
+        else:
+            form = StoryForm()
+        return render(request, 'index.html', {'form': form})
