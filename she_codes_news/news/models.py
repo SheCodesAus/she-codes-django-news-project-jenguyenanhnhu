@@ -9,6 +9,6 @@ class NewsStory(models.Model):
         )
     pub_date = models.DateTimeField()
     content = models.TextField()
-    image = models.ImageField(upload_to='images', default='static/news/images/placeholder-1.jpg')
+    image = models.FileField(upload_to='images', default='static/news/images/placeholder-1.jpg')
 
 
