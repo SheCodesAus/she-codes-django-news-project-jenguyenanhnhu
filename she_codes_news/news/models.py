@@ -7,6 +7,6 @@ class NewsStory(models.Model):
         get_user_model(), 
         on_delete = models.CASCADE
         )
-    pub_date = models.DateTimeField()
+    date = models.DateTimeField()
     content = models.TextField()
     image = models.FileField(upload_to='images', default='static/news/images/placeholder-1.jpg')

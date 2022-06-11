@@ -1,8 +1,8 @@
 from django.views import generic
-from .models import NewsStory
 from django.urls import reverse_lazy
+from .models import NewsStory
 from .forms import StoryForm
-from django.shortcuts import render
+# from django.shortcuts import render
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
@@ -13,8 +13,8 @@ class IndexView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['latest_stories'] = NewsStory.objects.all().order_by('-pub_date')[:4]
-        context['all_stories'] = NewsStory.objects.all().order_by('-pub_date')
+        context['latest_stories'] = NewsStory.objects.all().order_by('-date')[:4]
+        context['all_stories'] = NewsStory.objects.all().order_by('-date')
         return context
 
 class StoryView(generic.DetailView):
@@ -32,15 +32,15 @@ class AddStoryView(generic.CreateView):
         form.instance.author = self.request.user
         return().form_valid(form)
 
-    def image_upload_view(request):
-        """Process images uploaded by users"""
-        if request.method == 'POST':
-            form = StoryForm(request.POST, request.FILES)
-            if form.is_valid():
-                form.save()
-            # Get the current instance object to display in the template
-                img_obj = form.instance
-                return render(request, 'index.html', {'form': form, 'img_obj': img_obj})
-        else:
-            form = StoryForm()
-        return render(request, 'index.html', {'form': form})
+    # def image_upload_view(request):
+    #     """Process images uploaded by users"""
+    #     if request.method == 'POST':
+    #         form = StoryForm(request.POST, request.FILES)
+    #         if form.is_valid():
+    #             form.save()
+    #         # Get the current instance object to display in the template
+    #             img_obj = form.instance
+    #             return render(request, 'index.html', {'form': form, 'img_obj': img_obj})
+    #     else:
+    #         form = StoryForm()
+    #     return render(request, 'index.html', {'form': form})
