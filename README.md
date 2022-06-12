@@ -6,4 +6,4 @@ Heroku: [link]
 Instructions; 
 1. Create a user.
 2. Create a story. 
-3. Click on your username in the nav bar to see your account information.
+3. Click on your username in the nav bar to see your account information. For 'View stories by a particular author', you can view stories that the user has authored.
