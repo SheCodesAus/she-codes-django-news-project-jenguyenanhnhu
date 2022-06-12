@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}<title>{{ user.username }}</title>{% endblock %}
+
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 {% endblock %}
 
 {% block content %}

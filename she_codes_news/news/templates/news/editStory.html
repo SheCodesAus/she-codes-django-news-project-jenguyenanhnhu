@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}<title>Publish Your Thoughts</title>{% endblock %}
+{% block title %}<title>Edit Your Thoughts</title>{% endblock %}
 
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 {% endblock %}
 
 {% block content %}
-<h2>Publish Your Thoughts</h2>
+<h2>Edit Your Thoughts</h2>
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Submit Your Story">
+    <input type="submit" value="Edit Your Story">
 </form>
 
 {% endblock %}

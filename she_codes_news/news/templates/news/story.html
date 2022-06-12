@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}<title>{{ story.title }}</title>{% endblock %}
+
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 {% endblock %}
 
 {% block content %}
 
 <div id="story-wrapper">
     <h2>{{ story.title }}</h2>
+    <a href="{% url 'news:editStory' %}">Edit Story</a>
     <h4>By {{ story.author }}</h4>
     <div id="story-content">
         <img src="{{ story.image }}">
