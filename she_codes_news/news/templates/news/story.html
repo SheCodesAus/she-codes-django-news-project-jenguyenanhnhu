@@ -11,7 +11,9 @@
 
 <div id="story-wrapper">
     <h2>{{ story.title }}</h2>
-    <a href="{% url 'news:editStory' %}">Edit Story</a>
+    {% if request.user == story.author %}
+        <a href="{% url 'news:editStory' %}">Edit Story</a>
+    {% endif %}
     <h4>By {{ story.author }}</h4>
     <div id="story-content">
         <img src="{{ story.image }}">

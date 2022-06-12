@@ -25,9 +25,8 @@ class StoryView(generic.DetailView):
 class AddStoryView(generic.CreateView):
     model = NewsStory
     form_class = StoryForm
-    context_object_name = 'storyForm'
     template_name = 'news/CreateStory.html'
-    success_url = reverse_lazy('newStory')
+    success_url = reverse_lazy('news:story')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -38,7 +37,7 @@ class EditStoryView(generic.UpdateView):
     form_class = StoryForm
     context_object_name = 'storyForm'
     template_name = 'news/editStory.html'
-    success_url = reverse_lazy('newStory')
+    success_url = reverse_lazy('news:story')
 
     def get_queryset(self):
         '''Return submitted form.'''

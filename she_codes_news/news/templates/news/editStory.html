@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}<title>Edit Your Thoughts</title>{% endblock %}
+{% block title %}<title>Polish {{ story.title }}</title>{% endblock %}
 
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 {% endblock %}
 
 {% block content %}
-<h2>Edit Your Thoughts</h2>
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Edit Your Story">
-</form>
+<h2>Polish Your Thoughts</h2>
+    {% if request.user == story.author %}
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Polish Your Story">
+        </form>
+    {% else %} 
+        <p>Dear {{ user.username }} you didn't create this blog so you can't change it.</p>
+    {% endif %}
 
 {% endblock %}

@@ -1,9 +1,17 @@
-TITLE: 
-This blog started off as She Codes News and then it migrated and mutated into something different. Inspired by Lady Whistledown in Bridgerton, this website contains all the latest news, insider tea, and hot goss - told in 19th century proper English. The blog is designed to be enjoyed with a nice cup of tea and after promenading through the park with your chosen suitor.  
+TITLE: She Codes News
 
-Heroku: [link]
+Heroku: https://jn-she-codes-news.herokuapp.com/news/
+Last I checked, Heroku was serving up error 500 so I screenshot everything. Not sure how to add screenshots into README for a Mac device but so all screenshots are in 'Screenshots folder'.
 
-Instructions; 
-1. Create a user.
-2. Create a story. 
-3. Click on your username in the nav bar to see your account information. For 'View stories by a particular author', you can view stories that the user has authored.
+SCREENSHOTS:
+1. 'index.html' shows index or home page.
+2. 'myAccount.html' shows user's account information if they are logged in, displaying their username as well as stories they have edited which I achieved by filtering stories by author.
+3. 'Authored_Story' shows a story I can select 'Edit' because I am the author. 
+4. Notice that with 'Another_Story' authored by a different user, I cannot edit. 
+5
+
+Issue: 
+- getting image submitted in 'Publish Your Thoughts' form to load for article and on index page. 
+- formatting forms. I tried using widgets and bootstrap 'class': 'form-control' but it didn't change them. 
+- Every time I click on a story, it always shows screenshot 'error1' because it has issues with the url having an <int:pk> in it. Then when I click to edit, 'error2' shows to now add <int:pk>. Not sure how to not get any errors. 
+- I got the same to work for 'Edit forms' - even if I navigated to the edit url of another story, I wouldn't be able to edit but can edit one I have authored. 
