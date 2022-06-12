@@ -30,7 +30,7 @@ class AddStoryView(generic.CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        return().form_valid(form)
+        return super().form_valid(form)
 
     # def image_upload_view(request):
     #     """Process images uploaded by users"""

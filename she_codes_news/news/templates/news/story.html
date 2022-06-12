@@ -9,7 +9,7 @@
 
 <div id="story-wrapper">
     <h2>{{ story.title }}</h2>
-    <h4>{{ story.author }}</h4>
+    <h4>By {{ story.author }}</h4>
     <div id="story-content">
         <img src="{{ story.image }}">
         {{ story.content|linebreaks }}
