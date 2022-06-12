@@ -49,8 +49,8 @@ a {
     color: #000;
 }
 
-a, p {
-    font-family: monospace;
+a:hover {
+    text-decoration: underline;
 }
 
 footer {

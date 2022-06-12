@@ -10,3 +10,4 @@ class NewsStory(models.Model):
     date = models.DateTimeField()
     content = models.TextField()
     image = models.FileField(upload_to='images', default='static/news/images/placeholder-1.jpg')
+    caption = models.CharField(max_length=250, default='')
