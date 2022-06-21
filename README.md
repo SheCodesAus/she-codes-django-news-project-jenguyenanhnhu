@@ -8,7 +8,6 @@ SCREENSHOTS:
 2. 'myAccount.html' shows user's account information if they are logged in, displaying their username as well as stories they have edited which I achieved by filtering stories by author.
 3. 'Authored_Story' shows a story I can select 'Edit' because I am the author. 
 4. Notice that with 'Another_Story' authored by a different user, I cannot edit. 
-5
 
 Issue: 
 - getting image submitted in 'Publish Your Thoughts' form to load for article and on index page. 
