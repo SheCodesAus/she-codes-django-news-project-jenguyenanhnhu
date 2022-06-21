@@ -13,5 +13,4 @@ SCREENSHOTS:
 Issue: 
 - getting image submitted in 'Publish Your Thoughts' form to load for article and on index page. 
 - formatting forms. I tried using widgets and bootstrap 'class': 'form-control' but it didn't change them. 
-- Every time I click on a story, it always shows screenshot 'error1' because it has issues with the url having an <int:pk> in it. Then when I click to edit, 'error2' shows to now add <int:pk>. Not sure how to not get any errors. 
-- I got the same to work for 'Edit forms' - even if I navigated to the edit url of another story, I wouldn't be able to edit but can edit one I have authored. 
+- Every time I click on a story, it always shows screenshot 'error1' because it has issues with the url having an <int:pk> in it. Then when I click to edit, 'error2' shows to now add <int:pk>. Not sure how to not get any errors.  
